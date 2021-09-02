@@ -12,10 +12,21 @@ set laststatus=2
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-projectionist'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
+let g:gruvbox_number_column='bg0'
 call plug#end()
 autocmd vimenter * ++nested colorscheme gruvbox
-autocmd VimEnter * hi Normal ctermbg=none
 let g:gruvbox_contast_darkr='hard'
-let g:gruvbox_number_column='bg0'
 let mapleader=' '
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
